@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubewatch
+data:
+  .kubewatch.yaml: |
+    namespace: ""
+    handler:
+      slack:
+        token: xoxb-1882797644227-1879559724949-g50UnQzE0f5YtOL0ycum3j8O
+        channel: k8s-notifications
+    resource:
+      deployment: false
+      replicationcontroller: false
+      replicaset: false
+      daemonset: false
+      services: true
+      pod: true
+      secret: false
+      configmap: false
