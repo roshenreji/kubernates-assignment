@@ -29,6 +29,7 @@ pipeline{
         stage("kubernates"){
             steps{
                 sh "kubectl apply -f kubernetes"
+                sh "minikube service ui-service"
             }
         }
     }
