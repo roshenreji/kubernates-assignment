@@ -21,7 +21,7 @@ pipeline{
             steps{
                 withDockerRegistry([ credentialsId: "f584bcd1-20ad-4372-a6d8-aaecfaf8096e", url: "" ]){
                     sh "docker push roshenreji/kubernetes-app"
-                    sh "docker push roshenreji/kubernetes-app"
+                    sh "docker push roshenreji/kubernetes-ui"
                 }
             }
         }
