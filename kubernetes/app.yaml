@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: my-app
 spec:
+  replicas: 5
   selector:
     matchLabels:
       app: my-app
@@ -56,3 +57,4 @@ spec:
       targetPort: 8080
 
 
+    

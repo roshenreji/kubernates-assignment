@@ -17,6 +17,7 @@ kind: Deployment
 metadata:
   name: postgress
 spec:
+  replicas: 5
   selector:
     matchLabels:
       app: postgress
