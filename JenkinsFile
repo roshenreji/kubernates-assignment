@@ -4,27 +4,27 @@ pipeline{
     stages{
 
     
-        // stage("docker build"){
-        //     steps{
-        //         sh "docker-compose up -d"
-        //     }
-        // }
+        stage("docker build"){
+            steps{
+                sh "docker-compose up -d"
+            }
+        }
 
-        // stage("commiting the deocker images"){
-        //     steps{
-        //         sh "docker commit kanban-ui roshenreji/kubernetes-ui"
-        //         sh "docker commit kanban-app roshenreji/kubernetes-app" 
-        //     }
-        // }
+        stage("commiting the docker images"){
+            steps{
+                sh "docker commit kanban-ui roshenreji/kubernetes-ui"
+                sh "docker commit kanban-app roshenreji/kubernetes-app" 
+            }
+        }
 
-        // stage("pushing the images to docker hub"){
-        //     steps{
-        //         withDockerRegistry([ credentialsId: "83fb3bd9-d130-41d3-b0f9-3599a244c460", url: "" ]){
-        //             sh "docker push roshenreji/kubernetes-app"
-        //             sh "docker push roshenreji/kubernetes-app"
-        //         }
-        //     }
-        // }
+        stage("pushing the images to docker hub"){
+            steps{
+                withDockerRegistry([ credentialsId: "f584bcd1-20ad-4372-a6d8-aaecfaf8096e", url: "" ]){
+                    sh "docker push roshenreji/kubernetes-app"
+                    sh "docker push roshenreji/kubernetes-app"
+                }
+            }
+        }
 
         stage("kubernates"){
             steps{
