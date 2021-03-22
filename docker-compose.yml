@@ -22,7 +22,7 @@ services:
       - POSTGRES_USER=kanban
       - POSTGRES_PASSWORD=kanban
     ports:
-      - 8080:8080
+      - 8081:8081
     links:
       - kanban-postgres
 
